@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="description" content="GOOGOO Apparel.")
+    meta(property="og:type" content="article")
+    meta(property="og:title" content="GOOGOO Apparel")
+    meta(property="og:description" content="GOOGOO Apparel.")
+    meta(property="og:image" content="https://googooapparel.com/assets/images/og-image.jpg")
+    meta(name="theme-color" content="#164F91")
+    meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+    link(rel="icon" href="assets/images/ico.png")
+    link(rel="apple-touch-icon" href="assets/images/ico.png")
+    link(rel="apple-touch-startup-image" href="assets/images/ico.png")
+    link(rel="stylesheet" href="root.css")
+    script(src="https://use.typekit.net/mol8yna.js")
+    script try{Typekit.load({ async: true });}catch(e){}
+    block extrahead
+
+    block title
+  body
+    mixin item(title, url)
+      li
+        a(href=url, class=active == title ? 'active-page' : '')= title
+    block activepage
+    //.menu-header
+      ul
+        +item('Our Hats', '/index.html')
+        +item('Our Story', '/organizations.html')
+        +item('Contact', '/about.html')
+    .menu-spacer
+    block content
+        
+  section#end
+    section#disclaimer

@@ -1,0 +1,249 @@
+@import "bootstrap";
+$breakpoints: (smallphone: 360px, phone: 570px, tablet: 768px, desktop: 1024px, xldesktop: 1200px);
+$sans-serif: -apple-system, BlinkMacSystemFont, "SF UI Text", "Helvetica Neue", Helvetica, sans-serif;
+@import 'webfonts';
+@import 'include-media';
+
+$menu-height: 0px;
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+.splashimg-1, .splashimg-2, .splashimg-3, .splashimg-4, .splashimg-5 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.splashimg-1 {
+  background-image: url("assets/img/sketch2_2000.jpg");
+  min-height: 100%;
+  background-position: center;
+}
+.splashimg-2 {
+  background-image: url("assets/img/sketch3_2000.jpg");
+  min-height: 800px;
+  background-position: bottom;;
+}
+.splashimg-3 {
+  background-image: url("assets/img/sketch5_2000.jpg");
+  min-height: 800px;
+  background-position: bottom;;
+}
+.splashimg-4 {
+  background-image: url("assets/img/sketch6_2000.jpg");
+  min-height: 100%;
+  background-position: bottom;
+}
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+.p-splash p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight:100;
+  font-size:24px;
+}
+
+.menu-header{
+  height: $menu-height;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000000;
+  box-shadow: 0px 0px 2px #CCC;
+  img{
+    vertical-align: center;
+    height: 28px;
+    margin:{
+      top: 17px;
+      left: 12px;
+    }
+    @include media("<=phone") {
+      margin-left: 14px;
+    }
+  }
+  ul{
+    list-style-type: none;
+    display: inline-block;
+    float: right;
+    padding-left: 0px;
+    height: 100%;
+    font-size: 0;
+    border-right: 1px solid #edf3ff;
+    padding-right: 5px;
+  }
+  li{
+    height: 100%;
+    padding:{
+      top: 18px;
+      right: 10px;
+      left: 10px;
+    }
+    @include media("<=phone") {
+      padding:{
+      top: 18px;
+      right: 8px;
+      left: 6px;
+      }
+    }
+    @include media("<=smallphone") {
+      padding:{
+      top: 18px;
+      right: 6px;
+      left: 6px;
+      }
+    }
+    display: inline-block;
+    transition: background-color 80ms ease-in;
+      &:hover, &.active-page{
+      }
+    a{
+      font-family: $sans-serif;
+      font-size: 15px;
+      @include media("<=phone") {
+        font-size: 15px;
+      }
+      @include media("<=smallphone") {
+        font-size: 14px;
+      }
+      font-weight: normal;
+      padding-bottom: 5px;
+      border-bottom: 0px;
+      transition: border-bottom 80ms ease-in;
+      text-decoration: none;
+      &:hover, &:active, &.active-page{
+        text-decoration: none;
+        border-bottom: 2px solid;
+      }
+    }
+  }
+
+}
+
+.menu-spacer{
+  height: $menu-height;
+}
+
+.menu-logo {
+ @include media("<=phone") {
+    display: none;
+  }
+}
+
+header {
+  height: 80px;
+  background-position: center 30%;
+  background-size: cover;
+
+  @include media("<=phone") {
+    height: 220px;
+  }
+
+  .header-container {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+
+    @include media("<=phone") {
+      width: auto;
+    }
+
+    h1.header-name {
+      padding-top: 45px;
+      font-family: $sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 3.33px;
+      text-transform: uppercase;
+      margin: 0;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+
+      @include media("<=phone") {
+        padding-top: 45px;
+        font-size: 16px;
+      }
+
+      a {
+        color: #000;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    h2.header-hero {
+      font-family: "Arial Black", "AvenirNext-Heavy", "Arial Bold", Gadget, sans-serif;
+      font-weight: 300;
+      font-size: 51px;
+      color: #000;
+      letter-spacing: 0;
+      margin: 0;
+      padding-top: 35px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+
+      @include media("<=phone") {
+        font-size: 32px;
+      }
+
+      &.extra-pad {
+        padding-top: 60px;
+      }
+    }
+  }
+}
+
+section#landing {
+  display: block;
+}
+
+.hat-hero {
+  width: 100%;
+  height: auto;
+  img {
+    max-width: 250px;
+    margin: auto;
+    padding: 0 20px 0 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  li {
+    display: inline;
+  }
+  a:hover {
+    cursor: auto;
+  }
+}
+
+.seperator {
+  height: 1px;
+  width: 100%;
+  position: absoute;
+  background-color: #999;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.2); }

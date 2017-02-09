@@ -1,0 +1,35 @@
+extends __layout.pug
+
+block title
+  title GOOGOO
+
+block activepage
+  - var active = 'Home'
+
+block extrahead
+
+block content
+  //header
+    .header-container
+      h1.header-name
+        a(href='/') GOOGOO Apparel
+
+  section#landing
+  .splashimg-1
+    .caption
+      span.border COMING SOON
+    
+    // .caption
+      ul.hat-hero(style="padding-bottom:150px;")
+        li
+          a(href="#STUB")
+            img.grow(src='assets/img/STUB_hero.png' id='STUB_hero' alt='STUB')
+        li
+          a(href="#DEBUT")
+            img.grow(src='assets/img/DEBUT_hero.png' id='DEBUT_hero' alt='DEBUT')
+        li
+          a(href="#SCRACHT")
+            img.grow(src='assets/img/SCRACHT_hero.png' id='SCRACHT_hero' alt='SCRACHT')
+        li
+          a(href="#POINDEXTER")
+            img.grow(src='assets/img/POINDEXTER_hero.png' id='POINDEXTER_hero' alt='POINDEXTER')

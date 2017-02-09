@@ -1,0 +1,41 @@
+{
+  "name": "googoo",
+  "private": false,
+  "description": "GOOGOO Apparel",
+  "scripts": {
+    "prebuild": "rm -rf bin && mkdir bin",
+    "build": "parallelshell 'yarn build:css' 'yarn build:html'",
+    "build:css": "node-sass --output bin --output-style compressed src",
+    "build:html": "pug --out bin --pretty src",
+    "predev": " yarn build && ln -s \"$(pwd)/assets\" bin/assets",
+    "dev": "parallelshell 'yarn build:css -- --recursive --watch' 'yarn build:html -- --watch' 'live-server --port=5000 bin'",
+    "predist": "yarn build",
+    "dist": "yarn dist:assets && yarn dist:css && yarn dist:html",
+    "predist:assets": "cp -r assets bin/assets",
+    "dist:assets": "hashmark --cwd bin --length 24 --rename 'assets/**/*.*' '{hash}{ext}' | replaceinfiles --source 'bin/**/*.{css,html}'",
+    "dist:css": "hashmark --cwd bin --length 24 --rename '**/*.css' '{hash}.css' | replaceinfiles --source 'bin/**/*.html'",
+    "dist:html": "html-minifier --config-file html.json --file-ext html --input-dir bin --output-dir bin"
+  },
+  "devDependencies": {
+    "clean-css": "^3.4.22",
+    "hashmark": "^4.1.0",
+    "html-minifier": "^3.1.1",
+    "live-server": "^1.1.0",
+    "node-sass": "^3.11.2",
+    "parallelshell": "^2.0.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "replaceinfiles": "^1.1.4",
+    "uglify-js": "^2.7.5"
+  },
+  "repository": {
+    "url": "git@github.com:lyellr/googoo.git",
+    "type": "git"
+  },
+  "contributors": [
+    {
+      "name": "Lyell Roeder",
+      "email": "lyell@lyell.co",
+      "url": "http://lyell.co"
+    }
+  ]
+}

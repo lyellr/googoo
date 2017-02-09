@@ -1,0 +1,58 @@
+extends __layout.pug
+
+block title
+  title GOOGOO
+
+block activepage
+  - var active = 'Home'
+
+block extrahead
+
+block content
+  //header
+    .header-container
+      h1.header-name
+        a(href='/') GOOGOO Apparel
+
+  section#landing
+  .splashimg-1
+    .caption
+      span.border GOOGOO SNAPBACKS
+  div(style="color: #ddd;background-color:#282E34;text-align:center;padding:50px 20%;")
+    .tk-acumin-pro.p-splash
+      p In America&rsquo;s cities, the Snapback is the twenty&ndash;first century symbol of sex and swagger, worn prominently on the head, increasingly backwards, and increasingly at night. With SnapBacks worn more and more backwards for nightlife, GOOGOO asks what is the purpose of the brim now? Not for shade. The brim is a relic of what it once was, no longer serving a practical function.
+  .splashimg-2(style="opacity:.8;")
+    .caption
+      span(class="border" style="background-color:transparent;font-size:44px;color: #111;") BOLD
+  div(style="position:relative;")
+    div(style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 20%;")
+      .tk-acumin-pro.p-splash
+        p We reclaimed the brim as our canvas for experimentation. How can the brim of a Snapback be shaped to help the wearer express himself or herself? How can the brim be visually exposed &mdash; challenge the norm, explore the avant garde?
+  .splashimg-3(style="opacity:.8;")
+    .caption
+      span(class="border" style="background-color:transparent;font-size:44px;color: #111;") UNCOMPROMISING
+  div(style="position:relative;")
+    div(style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 20%;")
+      .tk-acumin-pro.p-splash
+        p Join our exclusive camp to find out. Wear it GOOGOO.
+  .splashimg-4(style="opacity:1;")
+    .caption
+      span(class="border" style="background-color:transparent;font-size:30px;color: #888;font-weight:100;") AVAILABLE SPRING 2017
+      .br
+      span(class="border" style="background-color:transparent;font-size:44px;color: #111;")
+        a(href="collection.html" style="color:black;") BROWSE OUR COLLECTION
+    
+    // .caption
+      ul.hat-hero(style="padding-bottom:150px;")
+        li
+          a(href="#STUB")
+            img.grow(src='assets/img/STUB_hero.png' id='STUB_hero' alt='STUB')
+        li
+          a(href="#DEBUT")
+            img.grow(src='assets/img/DEBUT_hero.png' id='DEBUT_hero' alt='DEBUT')
+        li
+          a(href="#SCRACHT")
+            img.grow(src='assets/img/SCRACHT_hero.png' id='SCRACHT_hero' alt='SCRACHT')
+        li
+          a(href="#POINDEXTER")
+            img.grow(src='assets/img/POINDEXTER_hero.png' id='POINDEXTER_hero' alt='POINDEXTER')
